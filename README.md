@@ -9,5 +9,4 @@ This repository serves as the official archive for empirical research papers, ma
 
 ### 1. [`TinyWonder, Zero base LORA adapter/`](./TinyWonder,%20Zero%20base%20LORA%20adapter/)
 - **Zero-Base Host Architecture for Rank-Stabilized LoRA Scaling**: Mathematical formulations and empirical validation for preventing catastrophic drift in high-rank low-precision adapters.
-- **Stacking Attenuation**: Analytical framework modeling degradation thresholds across sequential adapter merges on low-wattage silicon.
-- **Artifacts Included**: LaTeX sources, compile pipelines, formatted publication PDFs, and verification scripts.
+- **Artifacts Included**: Reference implementations, publication PDFs, and verification scripts.
