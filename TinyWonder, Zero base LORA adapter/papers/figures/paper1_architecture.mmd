@@ -1,0 +1,23 @@
+%% Tiny Wonder paper architecture — editable Mermaid source
+%% Render with: npx --yes @mermaid-js/mermaid-cli -i paper1_architecture.mmd -o paper1_architecture_mermaid.pdf
+%% The figure is a conceptual system boundary; measured results are cited in the manuscript.
+flowchart LR
+    B[Self-describing adapter bundle\nABI · vocabulary · digest · capabilities] --> V{Contract validation}
+    V -->|valid zero-base| Z[Zero-base lane\nbase = None\nstandalone specialist]
+    V -->|valid attached ABI| A[Attached lane\nexplicit base identity]
+    V -->|invalid or unsafe| R[Refusal\nno execution]
+    Z --> F[Versioned front door\nrequest · budget · permissions]
+    A --> F
+    F --> G[Capability registry\nroute individual specialists]
+    G --> C[Decision-space coordination\nprovided · contributing · abstaining]
+    C --> T[Tool boundary\nschema → execution → postcondition]
+    T --> O[Outcome\nsuccess · abstention · rejection]
+    O --> L[Lifecycle\ncandidate → canary → approval\npromotion or rollback]
+    L --> M[Content-addressed manifest\nreproducible release evidence]
+    classDef input fill:#e7f0f8,stroke:#1f4e79,color:#102a43;
+    classDef lane fill:#e8f5e9,stroke:#2e7d32,color:#1b4332;
+    classDef reject fill:#fde8e7,stroke:#b42318,color:#7f1d1d;
+    classDef control fill:#fff4cc,stroke:#9a6700,color:#5c3b00;
+    class B,V,F,G,C,T,M input;
+    class Z,A,L lane;
+    class R,O reject;
